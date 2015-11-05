@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/umahmood/haversine.svg?branch=master)](https://travis-ci.org/umahmood/haversine)
+
 # Haversine
 
 Package haversine is a Go library which implements the haversine formula. The 
