@@ -5,8 +5,9 @@ import (
 )
 
 const (
-	earthRadiusMi = 3958 // radius of the earth in miles.
-	earthRaidusKm = 6371 // radius of the earth in kilometers.
+	earthRadiusMi = 3958.8 // radius of the earth in miles.
+	earthRaidusKm = 6371.0 // radius of the earth in kilometers.
+	earthRaidusNM = 3443.92 // radius of the earth in nautical mile.
 )
 
 // Coord represents a geographic coordinate.
@@ -22,8 +23,8 @@ func degreesToRadians(d float64) float64 {
 
 // Distance calculates the shortest path between two coordinates on the surface
 // of the Earth. This function returns two units of measure, the first is the
-// distance in miles, the second is the distance in kilometers.
-func Distance(p, q Coord) (mi, km float64) {
+// distance in miles, the second is the distance in kilometers and third is nautical mile.
+func Distance(p, q Coord) (mi, km, nm float64) {
 	lat1 := degreesToRadians(p.Lat)
 	lon1 := degreesToRadians(p.Lon)
 	lat2 := degreesToRadians(q.Lat)
@@ -39,6 +40,7 @@ func Distance(p, q Coord) (mi, km float64) {
 
 	mi = c * earthRadiusMi
 	km = c * earthRaidusKm
+	nm = c * earthRaidusNM
 
-	return mi, km
+	return mi, km, nm
 }
