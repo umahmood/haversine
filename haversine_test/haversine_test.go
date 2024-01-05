@@ -7,8 +7,8 @@ import (
 )
 
 var tests = []struct {
-	p     Coord
-	q     Coord
+	p     haversine.Coord
+	q     haversine.Coord
 	outMi float64
 	outKm float64
 	outNm float64
